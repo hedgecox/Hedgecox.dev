@@ -6,11 +6,21 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
     }
+
+    @keyframes rollingFog {
+     0% { background-position: 0% 0%; }
+     100% { background-position: 200% 0%; }
+    }
 `;
 
 const Main = styled.main`
 	width: 100%;
 	height: 100vh;
+	background: url("https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-1.png")
+		repeat-x;
+	background-size: 200% auto;
+	background-position: 0% 0%;
+	animation: rollingFog 70s linear infinite;
 `;
 
 const Bulb = styled.img`
