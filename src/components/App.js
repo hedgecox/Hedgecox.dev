@@ -14,65 +14,72 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Main = styled.main`
-	width: 100%;
-	height: 100vh;
-	background: url("https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-1.png")
-		repeat-x;
-	background-size: 200% auto;
-	background-position: 0% 0%;
-	animation: rollingFog 70s linear infinite;
+  width: 100%;
+  height: 100vh;
+  background: url("https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-1.png")
+    repeat-x;
+  background-size: 200% auto;
+  background-position: 0% 0%;
+  animation: rollingFog 160s linear infinite;
 `;
 
 const Bulb = styled.img`
-	max-width: 100%;
+  max-width: 100%;
 `;
 
 const BulbContainer = styled.div`
-	--bulb-opacity: 0.6;
-	position: absolute;
-	top: 0;
-	right: 200px;
-	max-width: 650px;
-	z-index: 1;
+  --bulb-opacity: 0.6;
+  position: absolute;
+  top: 0;
+  right: 135px;
+  max-width: 650px;
+  z-index: 1;
 
-	&:after {
-		content: "";
-		width: 0;
-		height: 245px;
-		position: absolute;
-		top: 320px;
-		left: 327px;
-		box-shadow: 0px 67px 106px 39px rgba(251, 255, 0, var(--bulb-opacity));
-	}
+  &:after {
+    content: "";
+    width: 0;
+    height: 245px;
+    position: absolute;
+    top: 320px;
+    left: 327px;
+    box-shadow: 0px 67px 106px 39px rgba(251, 255, 0, var(--bulb-opacity));
+  }
 `;
 
 const App = () => {
-	const [Brightness, SetBrightness] = useState(50);
-	const BrightnessChange = e => SetBrightness(e.target.value);
-	const BulbContainerRef = useRef();
+  const [Brightness, SetBrightness] = useState(10);
+  const BrightnessChange = e => SetBrightness(e.target.value);
+  const BulbContainerRef = useRef();
 
-	useEffect(() => {
-		BulbContainerRef.current.style.setProperty("--bulb-opacity", Brightness / 255);
-	}, [Brightness]);
+  useEffect(() => {
+    BulbContainerRef.current.style.setProperty(
+      "--bulb-opacity",
+      Brightness / 255
+    );
+  }, [Brightness]);
 
-	return (
-		<>
-			<GlobalStyle />
-			<Main style={{ backgroundColor: `rgb(${Brightness}, ${Brightness}, ${Brightness})` }}>
-				<input
-					type="range"
-					min={50}
-					max={240}
-					value={Brightness}
-					onChange={BrightnessChange}
-				/>
-			</Main>
+  return (
+    <>
+      <GlobalStyle />
+      <Main
+        style={{
+          backgroundColor: `rgb(${Brightness}, ${Brightness}, ${Brightness})`
+        }}
+      >
+        <input
+          type="range"
+          min={10}
+          max={200}
+          value={Brightness}
+          onChange={BrightnessChange}
+        />
+      </Main>
 
-			<BulbContainer ref={BulbContainerRef}>
-				<Bulb src="/bulb2.png" alt="Lightbulb" />
-			</BulbContainer>
-		</>
-	);
+      <BulbContainer ref={BulbContainerRef}>
+        <Bulb src="/bulbtest.png" alt="Lightbulb" />
+      </BulbContainer>
+    </>
+  );
 };
 
 export default App;
