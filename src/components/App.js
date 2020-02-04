@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled, { createGlobalStyle } from "styled-components";
+import Profile from "./Profile";
 
 const GlobalStyle = createGlobalStyle`
     body{
         padding: 0;
         margin: 0;
+        font-family: roboto; 
     }
 
     @keyframes rollingFog {
@@ -46,6 +48,13 @@ const BulbContainer = styled.div`
   }
 `;
 
+const Slider = styled.input`
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 11;
+`;
+
 const App = () => {
   const [Brightness, SetBrightness] = useState(10);
   const BrightnessChange = e => SetBrightness(e.target.value);
@@ -66,18 +75,20 @@ const App = () => {
           backgroundColor: `rgb(${Brightness}, ${Brightness}, ${Brightness})`
         }}
       >
-        <input
+        <Profile />
+
+        <Slider
           type="range"
           min={10}
           max={200}
           value={Brightness}
           onChange={BrightnessChange}
         />
-      </Main>
 
-      <BulbContainer ref={BulbContainerRef}>
-        <Bulb src="/bulbtest.png" alt="Lightbulb" />
-      </BulbContainer>
+        <BulbContainer ref={BulbContainerRef}>
+          <Bulb src="/bulbtest.png" alt="Lightbulb" />
+        </BulbContainer>
+      </Main>
     </>
   );
 };
