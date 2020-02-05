@@ -1,55 +1,52 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
+import Range from "./Range";
 
 const BulbImg = styled.img`
-	max-width: 100%;
+  max-width: 100%;
+  max-width: 325px;
+
+  @media (max-width: 991px) {
+    max-height: 550px;
+  }
+
+  @media (max-width: 575px) {
+    max-height: 250px;
+  }
 `;
 
 const BulbContainer = styled.div`
-	position: absolute;
-	top: 0;
-	right: 0;
-	max-width: 33.33%;
-	z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 36%;
+  z-index: 1;
+  text-align: center;
 
-	&:after {
-		content: "";
-		width: 0;
-		height: 30%;
-		position: absolute;
-		top: 60%;
-		box-shadow: 0px 67px 106px 39px rgba(251, 255, 0, calc(var(--brightness) / 255));
-		left: 48%;
-	}
-`;
+  @media (max-width: 991px) {
+    position: relative;
+    width: 100%;
+  }
 
-const Slider = styled.input`
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: 11;
+  &:after {
+    content: "";
+    width: 0;
+    height: 30%;
+    position: absolute;
+    top: 60%;
+    box-shadow: 0px 67px 106px 39px
+      rgba(251, 255, 0, calc(var(--brightness) / 255));
+    left: 48%;
+  }
 `;
 
 const Bulb = () => {
-	const [Brightness, SetBrightness] = useState(10);
-	const BrightnessChange = e => SetBrightness(e.target.value);
-
-	useEffect(() => {
-		document.documentElement.style.setProperty("--brightness", Brightness);
-	}, [Brightness]);
-
-	return (
-		<BulbContainer>
-			<BulbImg src="/bulbtest.png" alt="Lightbulb" />
-			<Slider
-				type="range"
-				min={10}
-				max={200}
-				value={Brightness}
-				onChange={BrightnessChange}
-			/>
-		</BulbContainer>
-	);
+  return (
+    <BulbContainer>
+      <BulbImg src="/bulbtest.png" alt="Lightbulb" />
+      <Range />
+    </BulbContainer>
+  );
 };
 
 export default Bulb;
