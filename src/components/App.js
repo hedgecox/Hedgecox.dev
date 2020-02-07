@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         padding: 0;
         margin: 0;
-        font-family: roboto; 
+        font-family: 'Roboto', sans-serif;
         font-size: 16px;
         color: rgb(
           calc(255 - var(--brightness)),
