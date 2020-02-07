@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
         );
 
         @media (max-width: 575px) {
-          font-size: 10px;
+          font-size: 9px;
         }
     }
 
@@ -46,12 +46,11 @@ const GlobalStyle = createGlobalStyle`
 
 const Main = styled.main`
   width: 100%;
-  height: 100vh;
-  background: url("https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-1.png")
-    repeat-x;
+  min-height: 100vh;
+  background: url("/fog.png") repeat-x;
   background-size: 200% 100%;
   background-position: 0% 0%;
-  animation: rollingFog 160s linear infinite;
+  animation: rollingFog 140s linear infinite;
 `;
 
 const App = () => {

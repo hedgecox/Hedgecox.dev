@@ -26,16 +26,28 @@ const RangeSlider = styled.input`
     width: 49px;
     height: 49px;
     border: 0;
-    background: url("/thumb2.png") no-repeat;
+    background: url("/thumb.png") no-repeat;
     cursor: pointer;
+
+    @media (max-width: 575px) {
+      width: 38px;
+      height: 38px;
+      background-size: 100% 100%;
+    }
   }
 
   &::-moz-range-thumb {
     width: 49px;
     height: 49px;
     border: 0;
-    background: url("/thumb2.png") no-repeat;
+    background: url("/thumb.png") no-repeat;
     cursor: pointer;
+
+    @media (max-width: 575px) {
+      width: 38px;
+      height: 38px;
+      background-size: 100% 100%;
+    }
   }
 `;
 
@@ -50,7 +62,7 @@ const Range = () => {
     <RangeSlider
       type="range"
       min={10}
-      max={200}
+      max={250}
       value={Brightness}
       onChange={BrightnessChange}
     />

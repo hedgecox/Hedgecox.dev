@@ -29,7 +29,7 @@ const Tagline = styled.h2`
   font-size: 125%;
 `;
 
-const Intro = styled.p`
+const Intro = styled.div`
   font-weight: 300;
   margin: 20px 0 0 0;
   line-height: 127%;
@@ -65,20 +65,64 @@ const Tag = styled.span`
   }
 `;
 
+const P = styled.p`
+  margin: 12px 0;
+`;
+
+const Links = styled.div`
+  margin-top: 35px;
+
+  a {
+    margin-right: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+
+    @media (max-width: 575px) {
+      width: 55px;
+      height: 55px;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 8px 2px #f89b34, inset 0px 0px 3px 7px #f89b34;
+    }
+  }
+
+  img {
+    filter: invert(calc(var(--brightness) / 255 * 100%));
+    max-width: 100%;
+  }
+`;
+
 const Profile = () => {
   return (
     <Container>
       <Name>Luke Hedgecox</Name>
       <Tagline>Front End Engineer | Roboticist</Tagline>
       <Intro>
-        Hello, World! Welcome to the <Tag>summary</Tag> of me
-        <br />I write <Tag>code</Tag> to build a better web
-        <br />
-        My experiences <Tag>span</Tag> from front end development.....
-        <br />
-        My <Tag>main</Tag> focus is building dynamic, responsive interfaces
-        <br />
-        Blending technology with the human touch of creativity
+        <P>
+          Hello, World! Welcome to the <Tag>summary</Tag> of me
+        </P>
+        <P>
+          I write <Tag>code</Tag> to build a better web. The <Tag>span</Tag> of
+          my work ranges from front end web development to social robotics. My{" "}
+          <Tag>main</Tag> focus has always been building dynamic, responsive
+          interfaces:
+        </P>
+        <P>Blending technology with the human touch of creativity</P>
+        <Links>
+          <a href="https://github.com/hedgecox" target="blank">
+            <img src="/github.png" alt="My Github" />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/luke-hedgecox-1968b9b2"
+            target="blank"
+          >
+            <img src="/linkedin.png" alt="My Linkedin" />
+          </a>
+        </Links>
       </Intro>
     </Container>
   );

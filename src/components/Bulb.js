@@ -30,20 +30,28 @@ const BulbContainer = styled.div`
 
   &:after {
     content: "";
-    width: 0;
-    height: 30%;
+    z-index: -1;
+    height: 13%;
     position: absolute;
-    top: 60%;
-    box-shadow: 0px 67px 106px 39px
-      rgba(251, 255, 0, calc(var(--brightness) / 255));
-    left: 48%;
+    top: 63%;
+    box-shadow: 0px 67px 120px 100px
+      rgba(227, 159, 30, calc(var(--brightness) / 255));
+    width: 0;
+    left: 50%;
+    border-radius: 50%;
+
+    @media (max-width: 575px) {
+      box-shadow: 0px 67px 60px 38px
+        rgba(227, 159, 30, calc(var(--brightness) / 255));
+      top: 45%;
+    }
   }
 `;
 
 const Bulb = () => {
   return (
     <BulbContainer>
-      <BulbImg src="/bulbtest.png" alt="Lightbulb" />
+      <BulbImg src="/bulb.png" alt="Lightbulb" />
       <Range />
     </BulbContainer>
   );
