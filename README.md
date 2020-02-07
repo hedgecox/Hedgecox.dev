@@ -1,7 +1,9 @@
 ## Hedgecox.dev
 
-This project was created using the following:
-Create React App and Styled components
+This project was created using:
+
+Create React App
+Styled components
 
 Hosted with Netlify
 https://Hedgecox.dev
