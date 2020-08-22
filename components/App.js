@@ -45,24 +45,24 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Main = styled.main`
-	width: 100%;
-	min-height: 100vh;
-	background: url("/fog.png") repeat-x;
-	background-size: 200% 100%;
-	background-position: 0% 0%;
-	animation: rollingFog 140s linear infinite;
+    width: 100%;
+    min-height: 100vh;
+    background: url("/fog.png") repeat-x;
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+    animation: rollingFog 140s linear infinite;
 `;
 
 const App = () => {
-	return (
-		<>
-			<GlobalStyle />
-			<Main>
-				<Bulb />
-				<Profile />
-			</Main>
-		</>
-	);
+    return (
+        <>
+            <GlobalStyle />
+            <Main>
+                <Bulb />
+                <Profile />
+            </Main>
+        </>
+    );
 };
 
 export default App;
