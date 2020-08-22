@@ -2,7 +2,7 @@
 
 This project was created using:
 
-Create React App,
+Next.JS,
 Styled components
 
 Hosted with Netlify
