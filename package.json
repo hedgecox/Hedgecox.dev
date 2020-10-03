@@ -1,20 +1,27 @@
 {
-    "name": "nexthedgecox.dev",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "export": "next export"
-    },
-    "dependencies": {
-        "next": "9.5.2",
-        "react": "16.13.1",
-        "react-dom": "16.13.1",
-        "styled-components": "^5.1.1"
-    },
-    "devDependencies": {
-        "babel-plugin-styled-components": "^1.11.1"
-    }
+  "name": "nexthedgecox.dev",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "test": "jest"
+  },
+  "dependencies": {
+    "next": "9.5.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^7.24.3",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
+    "babel-jest": "^26.3.0",
+    "babel-plugin-styled-components": "^1.11.1",
+    "jest": "^26.4.2",
+    "jest-dom": "^4.0.0"
+  }
 }
